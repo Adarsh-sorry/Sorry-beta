@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Beta 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+  overflow: hidden;
+}
+
+.card {
+  width: 90%;
+  max-width: 420px;
+  padding: 35px 25px;
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  border-radius: 30px;
+  box-shadow: 0 10px 35px rgba(255,105,150,0.25);
+}
+
+.teddy {
+  font-size: 75px;
+  animation: bounce 1.5s infinite;
+}
+
+h1 {
+  color: #ff5c93;
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.message {
+  color: #777;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+button {
+  border: none;
+  padding: 13px 25px;
+  margin: 8px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff6f9f;
+  color: white;
+}
+
+.no {
+  background: #ffe1ec;
+  color: #ff5c93;
+}
+
+#secret {
+  display: none;
+  margin-top: 20px;
+  color: #ff4f8b;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.heart {
+  position: absolute;
+  font-size: 25px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-120px);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart" style="left:10%;">💗</div>
+<div class="heart" style="left:30%;">💕</div>
+<div class="heart" style="left:50%;">💖</div>
+<div class="heart" style="left:70%;">💗</div>
+<div class="heart" style="left:90%;">💞</div>
+
+<div class="card">
+
+<div class="teddy">🧸</div>
+
+<h1>I'm Sorry Beta 🥺💗</h1>
+
+<p class="message">
+Mujhse galti ho gayi... 🥺<br>
+I really didn't mean to hurt you. 💔<br><br>
+Please gussa mat ho naaa 🥹🎀<br>
+Tum mere liye bahut special ho. 💗
+</p>
+
+<p class="message">
+<b>Can you forgive me? 🥺👉👈</b>
+</p>
+
+<button class="yes" onclick="forgive()">
+Haan, maaf kiya 💗
+</button>
+
+<button class="no" onclick="please()">
+Abhi nahi 😤
+</button>
+
+<div id="secret">
+YAYYY!! 🥹💗<br>
+Thank you beta! 🧸🎀<br>
+Ab smile karo pleaseee 😭💕
+</div>
+
+</div>
+
+<script>
+
+function forgive() {
+  document.getElementById("secret").style.display = "block";
+
+  for(let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+
+    heart.innerHTML = "💗";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.fontSize = (20 + Math.random()*25) + "px";
+    heart.style.transition = "3s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.style.top = "-50px";
+    }, 100);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 3200);
+  }
+}
+
+function please() {
+  alert("Pleaseee beta 🥺👉👈 Ek baar maaf kar do naaa 💗");
+}
+
+</script>
+
+</body>
+</html>
